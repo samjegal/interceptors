@@ -1,15 +1,15 @@
 /**
  * @jest-environment jsdom
  */
-import * as http from 'http'
 import { HttpServer } from '@open-draft/test-server/http'
+import * as http from 'http'
 import { HttpRequestEventMap } from '../../../src'
+import { BatchInterceptor } from '../../../src/BatchInterceptor'
+import { ClientRequestInterceptor } from '../../../src/interceptors/ClientRequest'
+import { XMLHttpRequestInterceptor } from '../../../src/interceptors/XMLHttpRequest'
+import { encodeBuffer } from '../../../src/utils/bufferUtils.js'
 import { createXMLHttpRequest, waitForClientRequest } from '../../helpers'
 import { anyUuid, headersContaining } from '../../jest.expect'
-import { ClientRequestInterceptor } from '../../../src/interceptors/ClientRequest'
-import { BatchInterceptor } from '../../../src/BatchInterceptor'
-import { XMLHttpRequestInterceptor } from '../../../src/interceptors/XMLHttpRequest'
-import { encodeBuffer } from '../../../src/utils/bufferUtils'
 
 const httpServer = new HttpServer((app) => {
   app.post('/user', (req, res) => {

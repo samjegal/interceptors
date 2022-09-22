@@ -1,16 +1,16 @@
 /**
  * @jest-environment jsdom
  */
-import type { RequestHandler } from 'express'
 import { HttpServer } from '@open-draft/test-server/http'
+import type { RequestHandler } from 'express'
 import { IsomorphicRequest } from '../../../../src'
 import {
-  XMLHttpRequestEventListener,
-  XMLHttpRequestInterceptor,
+    XMLHttpRequestEventListener,
+    XMLHttpRequestInterceptor
 } from '../../../../src/interceptors/XMLHttpRequest'
+import { encodeBuffer } from '../../../../src/utils/bufferUtils.js'
 import { createXMLHttpRequest } from '../../../helpers'
 import { anyUuid, headersContaining } from '../../../jest.expect'
-import { encodeBuffer } from '../../../../src/utils/bufferUtils'
 
 declare namespace window {
   export const _resourceLoader: {

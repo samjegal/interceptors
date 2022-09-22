@@ -1,6 +1,6 @@
 import { Headers } from 'headers-polyfill'
 import { IsomorphicRequest } from './IsomorphicRequest'
-import { encodeBuffer } from './utils/bufferUtils'
+import { encodeBuffer } from './utils/bufferUtils.js'
 
 const url = new URL('http://dummy')
 const body = encodeBuffer(JSON.stringify({ hello: 'world' }))

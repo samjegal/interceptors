@@ -1,6 +1,6 @@
-import { getCleanUrl } from './getCleanUrl'
+import { getCleanUrl } from './getCleanUrl.js'
 
-describe('getCleanUrl', () => {
+describe('getCleanUrl.js', () => {
   describe('given a URL without query parameters', () => {
     test('should return url href as-is', () => {
       const url = new URL('https://github.com')

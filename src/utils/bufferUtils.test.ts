@@ -1,4 +1,4 @@
-import { decodeBuffer, encodeBuffer } from './bufferUtils'
+import { decodeBuffer, encodeBuffer } from './bufferUtils.js'
 
 it('encodes utf-8 string', () => {
   const encoded = encodeBuffer('😁')

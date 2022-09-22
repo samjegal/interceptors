@@ -2,23 +2,20 @@
  * XMLHttpRequest override class.
  * Inspired by https://github.com/marvinhagemeister/xhr-mocklet.
  */
-import type { Debugger } from 'debug'
 import { until } from '@open-draft/until'
-import {
-  Headers,
-  stringToHeaders,
-  objectToHeaders,
-  headersToString,
-} from 'headers-polyfill'
 import { DOMParser } from '@xmldom/xmldom'
+import type { Debugger } from 'debug'
+import {
+    Headers, headersToString, objectToHeaders, stringToHeaders
+} from 'headers-polyfill'
+import type { XMLHttpRequestEmitter } from '.'
+import { InteractiveIsomorphicRequest } from '../../InteractiveIsomorphicRequest'
+import { IsomorphicRequest } from '../../IsomorphicRequest'
+import { encodeBuffer } from '../../utils/bufferUtils.js'
 import { parseJson } from '../../utils/parseJson'
 import { toIsoResponse } from '../../utils/toIsoResponse'
 import { bufferFrom } from './utils/bufferFrom'
 import { createEvent } from './utils/createEvent'
-import type { XMLHttpRequestEmitter } from '.'
-import { IsomorphicRequest } from '../../IsomorphicRequest'
-import { encodeBuffer } from '../../utils/bufferUtils'
-import { InteractiveIsomorphicRequest } from '../../InteractiveIsomorphicRequest'
 
 type XMLHttpRequestEventHandler = (
   this: XMLHttpRequest,

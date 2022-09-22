@@ -1,12 +1,12 @@
 /**
  * @jest-environment node
  */
-import * as path from 'path'
-import { pageWith } from 'page-with'
 import { HttpServer } from '@open-draft/test-server/http'
+import { pageWith } from 'page-with'
+import * as path from 'path'
+import { encodeBuffer } from '../../../../src/utils/bufferUtils.js'
 import { extractRequestFromPage } from '../../../helpers'
 import { anyUuid, headersContaining } from '../../../jest.expect'
-import { encodeBuffer } from '../../../../src/utils/bufferUtils'
 
 const httpServer = new HttpServer((app) => {
   app.post('/user', (_req, res) => {

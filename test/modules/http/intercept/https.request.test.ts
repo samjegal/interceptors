@@ -1,14 +1,14 @@
 /**
  * @jest-environment node
  */
-import * as https from 'https'
+import { httpsAgent, HttpServer } from '@open-draft/test-server/http'
 import { RequestHandler } from 'express'
-import { HttpServer, httpsAgent } from '@open-draft/test-server/http'
+import * as https from 'https'
+import { HttpRequestEventMap } from '../../../../src'
+import { ClientRequestInterceptor } from '../../../../src/interceptors/ClientRequest'
+import { encodeBuffer } from '../../../../src/utils/bufferUtils.js'
 import { waitForClientRequest } from '../../../helpers'
 import { anyUuid, headersContaining } from '../../../jest.expect'
-import { ClientRequestInterceptor } from '../../../../src/interceptors/ClientRequest'
-import { HttpRequestEventMap } from '../../../../src'
-import { encodeBuffer } from '../../../../src/utils/bufferUtils'
 
 const httpServer = new HttpServer((app) => {
   const handleUserRequest: RequestHandler = (req, res) => {

@@ -1,14 +1,14 @@
 /**
  * @jest-environment node
  */
-import * as path from 'path'
-import { pageWith } from 'page-with'
 import { HttpServer } from '@open-draft/test-server/http'
 import { RequestHandler } from 'express-serve-static-core'
-import { createBrowserXMLHttpRequest } from '../../../helpers'
+import { pageWith } from 'page-with'
+import * as path from 'path'
 import { IsomorphicRequest, IsomorphicResponse } from '../../../../src'
+import { encodeBuffer } from '../../../../src/utils/bufferUtils.js'
+import { createBrowserXMLHttpRequest } from '../../../helpers'
 import { anyUuid, headersContaining } from '../../../jest.expect'
-import { encodeBuffer } from '../../../../src/utils/bufferUtils'
 
 const httpServer = new HttpServer((app) => {
   const requestHandler: RequestHandler = (_req, res) => {

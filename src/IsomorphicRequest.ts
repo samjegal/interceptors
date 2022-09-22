@@ -1,6 +1,6 @@
 import { Headers } from 'headers-polyfill'
 import { invariant } from 'outvariant'
-import { decodeBuffer } from './utils/bufferUtils'
+import { decodeBuffer } from './utils/bufferUtils.js'
 import { uuidv4 } from './utils/uuid'
 
 export interface RequestInit {

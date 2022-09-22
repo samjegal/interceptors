@@ -1,13 +1,13 @@
 /**
  * @jest-environment node
  */
-import { Request } from 'node-fetch'
 import { HttpServer } from '@open-draft/test-server/http'
+import { Request } from 'node-fetch'
 import { HttpRequestEventMap } from '../../../../src'
+import { ClientRequestInterceptor } from '../../../../src/interceptors/ClientRequest'
+import { encodeBuffer } from '../../../../src/utils/bufferUtils.js'
 import { fetch } from '../../../helpers'
 import { anyUuid, headersContaining } from '../../../jest.expect'
-import { ClientRequestInterceptor } from '../../../../src/interceptors/ClientRequest'
-import { encodeBuffer } from '../../../../src/utils/bufferUtils'
 
 const httpServer = new HttpServer((app) => {
   app.post('/user', (_req, res) => {

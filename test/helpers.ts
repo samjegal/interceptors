@@ -1,12 +1,12 @@
-import https from 'https'
 import http, { ClientRequest, IncomingMessage, RequestOptions } from 'http'
-import nodeFetch, { Response, RequestInfo, RequestInit } from 'node-fetch'
+import https from 'https'
+import nodeFetch, { RequestInfo, RequestInit, Response } from 'node-fetch'
 import { Page, ScenarioApi } from 'page-with'
-import { getRequestOptionsByUrl } from '../src/utils/getRequestOptionsByUrl'
-import { getIncomingMessageBody } from '../src/interceptors/ClientRequest/utils/getIncomingMessageBody'
-import { RequestCredentials } from '../src/glossary'
 import { IsomorphicRequest } from '../src'
-import { encodeBuffer } from '../src/utils/bufferUtils'
+import { RequestCredentials } from '../src/glossary'
+import { getIncomingMessageBody } from '../src/interceptors/ClientRequest/utils/getIncomingMessageBody'
+import { encodeBuffer } from '../src/utils/bufferUtils.js'
+import { getRequestOptionsByUrl } from '../src/utils/getRequestOptionsByUrl'
 
 export interface PromisifiedResponse {
   req: ClientRequest

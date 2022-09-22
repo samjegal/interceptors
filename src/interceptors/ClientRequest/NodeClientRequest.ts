@@ -1,27 +1,27 @@
+import { until } from '@open-draft/until'
 import type { Debugger } from 'debug'
+import { Headers, objectToHeaders } from 'headers-polyfill'
 import type { RequestOptions } from 'http'
 import { ClientRequest, IncomingMessage } from 'http'
-import { until } from '@open-draft/until'
-import { Headers, objectToHeaders } from 'headers-polyfill'
-import { MockedResponse } from '../../glossary'
 import type { ClientRequestEmitter } from '.'
-import { concatChunkToBuffer } from './utils/concatChunkToBuffer'
-import {
-  ClientRequestEndChunk,
-  normalizeClientRequestEndArgs,
-} from './utils/normalizeClientRequestEndArgs'
-import { NormalizedClientRequestArgs } from './utils/normalizeClientRequestArgs'
-import { toIsoResponse } from '../../utils/toIsoResponse'
-import { getIncomingMessageBody } from './utils/getIncomingMessageBody'
-import { bodyBufferToString } from './utils/bodyBufferToString'
-import {
-  ClientRequestWriteArgs,
-  normalizeClientRequestWriteArgs,
-} from './utils/normalizeClientRequestWriteArgs'
-import { cloneIncomingMessage } from './utils/cloneIncomingMessage'
-import { IsomorphicRequest } from '../../IsomorphicRequest'
+import { MockedResponse } from '../../glossary'
 import { InteractiveIsomorphicRequest } from '../../InteractiveIsomorphicRequest'
-import { getArrayBuffer } from '../../utils/bufferUtils'
+import { IsomorphicRequest } from '../../IsomorphicRequest'
+import { getArrayBuffer } from '../../utils/bufferUtils.js'
+import { toIsoResponse } from '../../utils/toIsoResponse'
+import { bodyBufferToString } from './utils/bodyBufferToString'
+import { cloneIncomingMessage } from './utils/cloneIncomingMessage'
+import { concatChunkToBuffer } from './utils/concatChunkToBuffer'
+import { getIncomingMessageBody } from './utils/getIncomingMessageBody'
+import { NormalizedClientRequestArgs } from './utils/normalizeClientRequestArgs'
+import {
+    ClientRequestEndChunk,
+    normalizeClientRequestEndArgs
+} from './utils/normalizeClientRequestEndArgs'
+import {
+    ClientRequestWriteArgs,
+    normalizeClientRequestWriteArgs
+} from './utils/normalizeClientRequestWriteArgs'
 
 export type Protocol = 'http' | 'https'
 

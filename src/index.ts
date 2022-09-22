@@ -1,9 +1,10 @@
-export * from './glossary'
-export * from './Interceptor'
 export * from './BatchInterceptor'
-export * from './IsomorphicRequest'
+export * from './glossary'
 export * from './InteractiveIsomorphicRequest'
-
+export * from './Interceptor'
+export * from './IsomorphicRequest'
+export { decodeBuffer, encodeBuffer } from './utils/bufferUtils.js'
 /* Utils */
-export { getCleanUrl } from './utils/getCleanUrl'
-export { encodeBuffer, decodeBuffer } from './utils/bufferUtils'
+export { getCleanUrl } from './utils/getCleanUrl.js'
+
+

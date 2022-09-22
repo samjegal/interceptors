@@ -1,21 +1,21 @@
 /**
  * @jest-environment jsdom
  */
+import { httpsAgent, HttpServer } from '@open-draft/test-server/http'
 import * as https from 'https'
 import fetch from 'node-fetch'
 import waitForExpect from 'wait-for-expect'
-import { HttpServer, httpsAgent } from '@open-draft/test-server/http'
 import {
-  HttpRequestEventMap,
-  IsomorphicRequest,
-  IsomorphicResponse,
+    HttpRequestEventMap,
+    IsomorphicRequest,
+    IsomorphicResponse
 } from '../../../src'
-import { createXMLHttpRequest, waitForClientRequest } from '../../helpers'
-import { anyUuid, headersContaining } from '../../jest.expect'
-import { XMLHttpRequestInterceptor } from '../../../src/interceptors/XMLHttpRequest'
 import { BatchInterceptor } from '../../../src/BatchInterceptor'
 import { ClientRequestInterceptor } from '../../../src/interceptors/ClientRequest'
-import { encodeBuffer } from '../../../src/utils/bufferUtils'
+import { XMLHttpRequestInterceptor } from '../../../src/interceptors/XMLHttpRequest'
+import { encodeBuffer } from '../../../src/utils/bufferUtils.js'
+import { createXMLHttpRequest, waitForClientRequest } from '../../helpers'
+import { anyUuid, headersContaining } from '../../jest.expect'
 
 declare namespace window {
   export const _resourceLoader: {
